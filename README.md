@@ -23,5 +23,5 @@ The frontend is styled using Material UI for a modern and responsive design. Ens
 
 ## Contributing
 Contributions to the frontend codebase are welcome! Please fork the repository and submit a pull request with your changes.
-##Image Preview##
+
 <img width="409" alt="image for web" src="https://github.com/liyat-1/User-Profile-using-Angular/assets/120402310/aa958a1f-f0e0-4261-adf8-562de4d8fb79">
