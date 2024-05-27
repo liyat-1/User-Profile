@@ -14,6 +14,9 @@ You can visit the respective directories in the GitHub repository to view the fu
 1. Navigate to the `frontend` directory.
 2. Install the dependencies using `npm install`.
 3. Start the Angular development server using `ng serve`.
+
+
+
    <img width="409" alt="image for web" src="https://github.com/liyat-1/User-Profile-using-Angular/assets/120402310/aa958a1f-f0e0-4261-adf8-562de4d8fb79">
 
 
