@@ -1,0 +1,117 @@
+body{
+background-color: rgba(41, 41, 41, 0.89);
+}
+.user-form {
+max-width: 1000px;
+margin: 0px auto 0 auto;
+background-color: rgba(41, 41, 41, 0.15); /* Transparent background */
+border: 1px solid #ccc; /* Border color */
+border-radius: 5px;
+padding: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.form-group {
+margin-bottom: 20px;
+}
+
+.label {
+font-size: 18px;
+font-weight: bold;
+color: #fff6f6;
+}
+
+.input {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ffffff;
+border-radius: 5px;
+background-color: transparent; /* Black background */
+color: #ffffff; /* White text color */
+}
+.input::placeholder {
+color: #ffffff; /* White placeholder color */
+}
+.image-preview {
+border: 2px solid #ddd;
+border-radius: 5px;
+padding: 5px;
+margin-top: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 300px; /* Set the height of the container */
+}
+
+.image-preview img {
+max-width: 100%; /* Ensure the image doesn't exceed the container width */
+max-height: 100%; /* Ensure the image doesn't exceed the container height */
+border-radius: 5px;
+}
+
+
+.button {
+display: block;
+width: 100%;
+padding: 10px;
+font-size: 18px;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.button:hover {
+background-color: #0056b3;
+}
+
+
+
+
+.input[type="file"] {
+
+display: none;
+}
+
+.choose-file-button {
+
+display: inline-block;
+padding: 10px 20px;
+font-size: 16px;
+background-color: #007bff;
+color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.file-name {
+font-size: 16px;
+color: #ffffff;
+margin-top: 5px;
+border: 2px solid #ddd;
+border-radius: 5px;
+padding: 5px;
+margin-top: 10px;
+}
+
+
+.file-input-container {
+position: relative;
+}
+
+
+.file-input-container input[type="file"] {
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+width: 100%;
+height: 100%;
+cursor: pointer;
+}
+
+
+

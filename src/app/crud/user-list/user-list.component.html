@@ -1,0 +1,290 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Liyat Tesfaye">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://kit.fontawesome.com/b8b432d7d3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./user-list.component.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+        <mat-card  class="container" *ngFor="let user of dataSource.data">
+          <div class="profile-card">
+            <div  class="profile-header">
+              <img [src]="'http://localhost/web_api/uploads/'+ user.u_cover" alt="User Cover Photo" class="cover-image" >
+
+              <div class="main-profile">
+                <img [src]="'http://localhost/web_api/uploads/'+ user.u_photo" alt="User Photo" class="profile-image" >
+                          <div class="profile-names">
+                            <h1 class="username">{{ user.u_name }}</h1>
+                            <small class="page-title">{{ user.u_description }}</small>
+                        </div>
+                  </div>
+                  </div>
+
+                  <div class="profile-body">
+                      <div class="profile-actions">
+                          <section class="bio">
+                              <div class="bio-header">
+                                  Age
+                                  {{ user.u_age }}
+                              </div>
+                              <p class="bio-text">
+                                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                              </p>
+                          </section>
+                          <br>
+                          <div class="button-container">
+                            <button type="button"
+                            class="btn btn-outline-light  me-2" (click)="editUserDetail(user)">Edit</button>
+                            <br>
+                            <button
+                            type="button"
+                            class="btn btn-outline-light  me-2"
+                            [routerLinkActive]="'btn-warning'"
+                            [routerLink]="'/crud/create-user'"
+                          >Switch User</button>
+                          <br>
+                          </div>
+                      </div>
+
+
+                      <div class="account-info">
+                          <div class="data">
+                              <div class="important-data">
+                                  <section class="data-item">
+                                    <i class="fa-brands fa-spotify fa-3x" style="color: #0db701;"></i>
+                                    <h3 class="value"> 5B</h3>
+                                      <small class="title">Spotify Streams</small>
+                                  </section>
+                                  <section class="data-item">
+                                    <i class="fa-brands fa-itunes fa-3x" style="color: #fa3200;"></i>
+                                    <h3 class="value">35M</h3>
+                                      <small class="title">iTunes Streams</small>
+                                  </section>
+
+                                  <section class="data-item">
+                                    <i class="fa-solid fa-record-vinyl fa-3x"></i>
+                                    <h3 class="value">15B</h3>
+                                      <small class="title">Album Sales</small>
+                                  </section>
+                              </div>
+                              <div class="other-data">
+                                <section class="data-item">
+                                  <i class="fas fa-microphone-alt"></i>
+                                  <h3 class="value">50</h3>
+                                  <small class="title">Songs Released</small>
+                                </section>
+                                <section class="data-item">
+                                  <i class="fas fa-music"></i>
+                                  <h3 class="value">100K</h3>
+                                  <small class="title">Monthly Listeners</small>
+                                </section>
+                                <section class="data-item">
+                                  <i class="fas fa-play-circle"></i>
+                                  <h3 class="value">1M</h3>
+                                  <small class="title">Total Plays</small>
+                                </section>
+                              </div>
+                          </div>
+
+                          <div class="social-media">
+                              <span>Follow me</span>
+                              <a href="https://twitter.com/theweeknd?lang=en" class="media-link"><i class="fab fa-twitter-square"></i></a>
+                              <a href="https://www.instagram.com/theweeknd/?hl=en" class="media-link"><i class="fab fa-instagram-square"></i></a>
+                              <a href="https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ" class="media-link"><i class="fa-brands fa-spotify"></i></a>
+                          </div>
+
+                          <div class="last-post">
+                              <div class="post-cover">
+                                  <span class="last-badge">Albums</span>
+                                  <img  class="post-image"   [src]="'http://localhost/web_api/uploads/'+ user.u_album_image">
+                                  <h3 class="post-title" style=" font-size: 28px;
+                                  font-weight: bolder;">{{ user.u_album_name }}</h3>
+                                  <button class="post-CTA">View</button>
+                                </div>
+                              </div>
+                      </div>
+                </div>
+                <button class="btn-hover color-8 md-1" (click)="deleteUser(user)">Delete</button>
+            </div>
+
+          </mat-card>
+
+  </body>
+
+</html>
+
+
+ -->
+
+
+
+
+
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta name="author" content="Liyat Tesfaye">
+       <title>Profile Page</title>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+       <script src="https://kit.fontawesome.com/b8b432d7d3.js" crossorigin="anonymous"></script>
+       <link rel="stylesheet" href="./user-list.component.scss">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+ </head>
+ <body>
+   <mat-card   *ngFor="let user of dataSource.data">
+   <div class="cover-image-container">
+     <img class="cover-image" [src]="'http://localhost/web_api/uploads/'+ user.u_cover" alt="User Cover Photo">
+     <div class="splash-effect left"></div>
+     <div class="splash-effect right"></div>
+     <div class="profile-info">
+       <div class="profile-img">
+         <img [src]="'http://localhost/web_api/uploads/'+ user.u_photo" alt="User Photo">
+       </div>
+       <div class="user-details">
+         <h2>{{ user.u_name }}</h2>
+         <p>{{ user.u_description }}</p>
+       </div>
+       <div class="padding">
+        <div class="btn-group" role="group">
+          <label for="viewField">
+            <button id="viewField" class="btn btn-success" [routerLinkActive]="'btn-warning'" [routerLink]="'/crud/create-user'">Switch User</button>
+          </label>
+          <label for="editField">
+            <button id="editField" class="btn btn-warning" (click)="editUserDetail(user)">Edit</button>
+          </label>
+          <label for="deleteField">
+            <button id="deleteField" class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+          </label>
+        </div>
+      </div>
+     </div>
+   </div>
+  <div class="container-fluid">
+    <div class="bio-and-genre-container">
+      <mat-card class="bio-section">
+        <section class="bio">
+          <div class="bio-header">
+            Age
+            <span class="age">{{ user.u_age }}</span>
+          </div>
+          <hr class="divider">
+          <p class="bio-text">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          </p>
+        </section>
+      </mat-card>
+      <section class="genre">
+        <div class="genre-header">
+          Music Genres
+        </div>
+        <div class="genre-list">
+          <ul>
+            <li>Pop</li>
+            <li>Rock</li>
+            <li>Hip Hop</li>
+            <li>Electronic</li>
+            <!-- Add more genres as needed -->
+          </ul>
+        </div>
+      </section>
+    </div>
+
+
+     <div class="section-container">
+      <div class="play-album-container">
+        <mat-card class="play-section">
+          <div class="account-info">
+            <div class="data">
+                <div class="important-data">
+                    <section class="data-item">
+                      <i class="fa-brands fa-spotify fa-3x" style="color: #0db701;"></i>
+                      <h3 class="value"> 5B</h3>
+                        <small class="title">Spotify Streams</small>
+                    </section>
+                    <section class="data-item">
+                      <i class="fa-brands fa-itunes fa-3x" style="color: #fa3200;"></i>
+                      <h3 class="value">35M</h3>
+                        <small class="title">iTunes Streams</small>
+                    </section>
+
+                    <section class="data-item">
+                      <i class="fa-solid fa-record-vinyl fa-3x"></i>
+                      <h3 class="value">15B</h3>
+                        <small class="title">Album Sales</small>
+                    </section>
+                </div>
+                <div class="other-data">
+                  <section class="data-item">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3 class="value">50</h3>
+                    <small class="title">Songs Released</small>
+                  </section>
+                  <section class="data-item">
+                    <i class="fas fa-music"></i>
+                    <h3 class="value">100K</h3>
+                    <small class="title">Monthly Listeners</small>
+                  </section>
+                  <section class="data-item">
+                    <i class="fas fa-play-circle"></i>
+                    <h3 class="value">1M</h3>
+                    <small class="title">Total Plays</small>
+                  </section>
+                </div>
+            </div>
+          </div>
+        </mat-card>
+
+        <!-- Albums Section -->
+        <mat-card class="albums-section">
+          <div class="col-md-9">
+            <div class="profile-card-6">
+              <img class="img img-responsive" [src]="'http://localhost/web_api/uploads/'+ user.u_album_image">
+              <div class="profile-stats">
+                <div class="profile-stat">
+                  <h3><i class="fa-brands fa-spotify" style="color: #0db701;"></i> 5B</h3>
+                  <p>Spotify Streams</p>
+                </div>
+                <div class="profile-stat">
+                  <h3><i class="fa-brands fa-itunes" style="color: #fa3200;"></i> 35M</h3>
+                  <p>iTunes Streams</p>
+                </div>
+                <div class="profile-stat">
+                  <h3><i class="fa-solid fa-record-vinyl"></i> 15B</h3>
+                  <p>Album Sales</p>
+                </div>
+              </div>
+              <div class="profile-name">Platinum</div>
+              <div class="profile-position">{{ user.u_album_name }}</div>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <!-- Play Section -->
+
+    </div> <!-- End of section-container -->
+
+  </div>
+   <!-- Social Media Links -->
+   <div class="social-media">
+     <span>Follow me</span>
+     <br>
+     <a href="https://twitter.com/theweeknd?lang=en" class="media-link"><i class="fab fa-twitter-square"></i></a>
+     <a href="https://www.instagram.com/theweeknd/?hl=en" class="media-link"><i class="fab fa-instagram-square"></i></a>
+     <a href="https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ" class="media-link"><i class="fa-brands fa-spotify"></i></a>
+   </div>
+   </mat-card>
+ </body>
+ </html>
+

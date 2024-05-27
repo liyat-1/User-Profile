@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form [formGroup]="userForm" (ngSubmit)="createUser()" class="user-form">
+    <div class="form-group">
+      <label for="name" class="label">Name</label>
+      <input type="text" class="form-control input" id="name" formControlName="name" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="description" class="label">Description</label>
+      <textarea class="form-control input" id="description" formControlName="description" placeholder="Enter description"></textarea>
+    </div>
+    <div class="form-group file-input-container">
+      <label for="photo" class="label">Profile image</label>
+      <input type="file" class="form-control-file input" id="photo" (change)="onPhotoSelected($event)">
+
+      <label class="choose-file-button" for="photo">Choose File</label>
+
+      <div *ngIf="userForm.get('photo')?.value" class="file-name">{{ userForm.get('photo')?.value?.name }}</div>
+
+      <div *ngIf="userForm.get('photo')?.value" class="image-preview">
+        <img [src]="getPhotoPreview()" class="img-fluid" alt="Photo Preview">
+      </div>
+    </div>
+
+    <div class="form-group file-input-container">
+      <label for="cover" class="label">Cover</label>
+      <input type="file" class="form-control-file input" id="cover" (change)="onCoverSelected($event)">
+
+      <label class="choose-file-button" for="cover">Choose File</label>
+
+      <div *ngIf="userForm.get('cover')?.value" class="file-name">{{ userForm.get('cover')?.value?.name }}</div>
+
+      <div *ngIf="userForm.get('cover')?.value" class="image-preview">
+        <img [src]="getCoverPreview()" class="img-fluid" alt="Cover Preview">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="age" class="label">Age</label>
+      <input type="number" class="form-control input" id="age" formControlName="age" placeholder="Enter age">
+    </div>
+
+    <div class="form-group">
+      <label for="album_name" class="label">Album title</label>
+      <input type="text" class="form-control input" id="album_name" formControlName="album_name" placeholder="Album title">
+    </div>
+    <div class="form-group file-input-container">
+      <label for="album_image" class="label"> Album Cover</label>
+      <input type="file" class="form-control-file input" id="album_image" (change)="onAlbum_ImageSelected($event)">
+
+      <label class="choose-file-button" for="album_image">Choose File</label>
+
+      <div *ngIf="userForm.get('album_image')?.value" class="file-name">{{ userForm.get('album_image')?.value?.name }}</div>
+
+      <div *ngIf="userForm.get('album_image')?.value" class="image-preview">
+        <img [src]="getAlbum_ImagePreview()" class="img-fluid" alt="album_image Preview">
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary button">{{ buttonText }}</button>
+    <br>
+    <button
+        type="button"
+          class="btn btn-outline-light me-2"
+          [routerLinkActive]="'btn-warning'"
+          [routerLink]="'/crud/user-list'"
+        >User Profile</button>
+
+  </form>
+
+</body>
+</html>
