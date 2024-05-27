@@ -1,0 +1,178 @@
+{
+	"variables": [],
+	"info": {
+		"name": "WebApi",
+		"_postman_id": "34258276-dea5b052-a2d2-4c3d-a115-5329f4a60e73",
+		"description": "Profile Crud Handler",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "View All users",
+			"request": {
+				"url": "http://localhost/web_api/view.php",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "View All users"
+			},
+			"response": []
+		},
+		{
+			"name": "View Single user",
+			"request": {
+				"url": {
+					"raw": "http://localhost/web_api/view_one.php?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"web_api",
+						"view_one.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "View single user with ID"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"url": {
+					"raw": "http://localhost/web_api/delete.php?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"web_api",
+						"delete.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create a user",
+			"request": {
+				"url": "http://localhost/web_api/create.php",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Army",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Bts Supporter",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"value": "https://thebiaslistcom.files.wordpress.com/2023/11/jungkook-bts-standing-next-to-you.jpg?w=640",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "cover",
+							"value": "https://kpoppie.com/wp-content/uploads/2023/11/Standing-Next-to-You-1.webp",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "27",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update Data",
+			"request": {
+				"url": "http://localhost/web_api/update.php",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "User Data updated",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "updated",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"value": "Image updated",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "cover",
+							"value": "Cover image updated",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "7",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
